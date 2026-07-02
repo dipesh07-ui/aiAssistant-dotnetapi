@@ -1,0 +1,51 @@
+# Build artifacts
+[Bb]in/
+[Oo]bj/
+artifacts/
+publish/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+
+# Rider / ReSharper
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# Test / coverage output
+TestResults/
+coverage/
+coverage*.json
+*.coverage
+*.coveragexml
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+
+# Logs
+*.log
+
+# Local secrets and environment overrides
+.env
+.env.*
+appsettings.*.local.json
+appsettings.*.Secrets.json
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+Properties/PublishProfile/
+**/*.pubxml
+**/*publishsettings
