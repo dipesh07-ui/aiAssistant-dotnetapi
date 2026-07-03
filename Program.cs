@@ -91,7 +91,11 @@ builder.Services.AddHangfireServer();
 
 builder.Services.AddCors(opt => opt.AddPolicy("Angular", policy =>
     policy
-        .WithOrigins("http://localhost:4200")
+        .WithOrigins(
+        "http://localhost:4200",
+        "https://www.videoassistantdip.dev",
+        "https://videoassistantdip.dev"
+        )
         .AllowAnyHeader()
         .AllowAnyMethod()
         .AllowCredentials()
