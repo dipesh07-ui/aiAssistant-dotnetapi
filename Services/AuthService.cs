@@ -56,8 +56,12 @@ namespace aiAssistant.api.Services
 
         public async Task<Result<AuthResponse>> GoogleAuthAsync(GoogleAuthRequest request)
         {
+            var settings = new GoogleJsonWebSignature.ValidationSettings()
+            {
+                Audience = new[] { _config["Google:ClientId"]! }
+            };
             // validate Google token
-            var payload = await GoogleJsonWebSignature.ValidateAsync(request.GoogleToken);
+            var payload = await GoogleJsonWebSignature.ValidateAsync(request.GoogleToken, settings);
             if (payload == null)
                 return Result<AuthResponse>.Failure("Invalid Google token");
 
